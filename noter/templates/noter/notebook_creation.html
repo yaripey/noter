@@ -1,0 +1,21 @@
+{% extends "noter\base.html" %}
+
+{% block content %}
+    <div class="notes-content">
+        <h2>Notebook creation</h2>
+        <form action="/noter/create_notebook/" method="post">
+            {% csrf_token %}
+            <div class="label">Notebook name:</div>
+            <div class="notebook-edit-name">
+                {{ form.name }}
+            </div>
+            <div class="label">Notebook decription:</div>
+            <div class="notebook-edit-desc">
+                {{ form.desc }}
+            </div>
+            <div class="note-bottom">
+                <input type="submit" value = "Create">
+            </div>
+        </form>
+    </div>
+{% endblock %}

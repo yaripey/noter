@@ -1,0 +1,31 @@
+{% extends "noter\base.html" %}
+
+{% block content %}
+    <div class="notes-content">
+        <a href="{% url 'noter:index' %}" class="note-item">Back to notebooks</b></a>
+    </div>
+    <div class="notes-content">
+        <div class="notebook-title-desc">{{ notebook.name }}</div>
+        <a href="{% url 'noter:notebook_edit' notebook.id %}" class="notebook-edit button">Edit</a>
+        <div style="clear: both;"></div>
+        <div class="notebook-inside-desc">{{ notebook.desc }}</div>
+    </div>
+    <div class="notes-content">
+        {% if notes %}
+            {% for note in notes %}
+                <a href="{% url 'noter:note' note.id %}" class="note-item">
+                    {% if note.title != "" or note.text != "" %}
+                        <h3>{{ note.title }}</h3>
+                        <p>{{ note.text }}</p>
+                    {% else %}
+                        <p>Empty note</p>
+                    {% endif %}
+                </a>
+            {% endfor %}
+        {% else %}
+            <p>There are no notes here yet. Create one by pressing "+" button on the bottom-right of your screen.</p>
+        {% endif %}
+        
+    </div>
+    <a href="{% url 'noter:note_create' notebook.id %}" class="create">+</a>
+{% endblock %}

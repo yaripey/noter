@@ -1,0 +1,20 @@
+{% extends "noter\base.html" %}
+
+{% block content %}
+<div class="main-content">
+
+    {% if notebooks_list %}
+        {% for notebook in notebooks_list %}
+            <a href="{% url 'noter:notebook' notebook.id %}" class="notebook-item">
+                <div class="notebook-title">{{ notebook.name }}</div>
+                <span class="dotted-divider"></span>
+                <div class="notebook-desc">{{ notebook.desc }}</div>
+            </a>
+        {% endfor %}
+        
+    {% else %}
+        <p>There are no notebooks yet. Create one by pressing "+" buttom on the bottom right of your screen.</p>
+    {% endif %}
+</div>
+<a href="{% url 'noter:notebook_create' %}" class="create">+</a>
+{% endblock %}

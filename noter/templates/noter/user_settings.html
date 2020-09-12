@@ -1,0 +1,35 @@
+{% extends 'noter\base.html' %}
+
+{% block content %}
+
+    <div class="notes-content">
+        <a href="{% url 'noter:index' %}" class="note-item">Back to notebooks</a>
+    </div>
+    <div class="notes-content">
+        <h2>Edit your user information:</h2>
+        <form action="/noter/user_settings/" method = "post">
+            {% csrf_token %}
+            <div class="label">Username:</div>
+            <div class="notebook-edit-name">
+                {{ form.username }}
+            </div>
+            <div class="label">Email:</div>
+            <div class="notebook-edit-name">
+                {{ form.email }}
+            </div>
+            <div class="label">First name:</div>
+            <div class="notebook-edit-name">
+                {{ form.firstname }}
+            </div>
+            <div class="label">Last name:</div>
+            <div class="notebook-edit-name">
+                {{ form.lastname }}
+            </div>
+            {{ error }}
+            <div class="note-bottom">
+                <input type="submit" value = "Save">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

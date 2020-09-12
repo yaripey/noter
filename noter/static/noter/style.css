@@ -1,0 +1,271 @@
+/* General */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto";
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.create {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: "Roboto";
+    font-size: 20px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease;
+}
+
+.create:visited {
+    color: black;
+}
+
+.create:hover {
+    transition: 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Header */
+.header {
+    font-family: sans-serif;
+    line-height: 50px;
+    /* padding-left: 50px; */
+    height: 50px;
+    width: 100%;
+    background: rgb(3, 3, 143);
+    color: white;
+    box-shadow: 0 0 7px black;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.header a:visited {
+    color: white;
+}
+
+
+/* Main page styles */
+.main-content {
+    text-align: center;
+    /* padding-left: 20px; */
+}
+
+
+/* Notebook styles */
+.notebook-item {
+    text-align: center;
+    background: white;
+    width: 200px;
+    height: 270px;
+    padding-top: 10px;
+    border-left: solid 2px blue;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    margin: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: grey;
+    font-family: "Roboto";
+    vertical-align: top;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.6);
+    transition: 0.3s ease;
+}
+
+.notebook-item:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    transition: 0.3s ease;
+}
+
+.notebook-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.notebook-desc {
+    font-size: 12px;
+    width: 120px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.dotted-divider {
+    border-bottom: 1px dotted grey;
+    height: 1px;
+    display: block;
+    width: 180px;
+    margin: auto;
+}
+
+/* Note styles */
+.notes-content {
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.6);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-left: 2px solid blue;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+}
+
+.note-item {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s ease;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.note-item:visited {
+    transition: 0.3s ease;
+    color: black;
+}
+
+.note-item:hover {
+    background-color: grey;
+    color: white;
+}
+
+.note-title input {
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.note-text textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.note-bottom input, .button{
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: blue;
+    color: white;
+    transition: 0.3s ease;
+    border: 1px solid blue;
+    display: inline-block;
+}
+
+.button:visited {
+    color: white;
+}
+
+.note-bottom input:hover, .button:hover {
+    transition: 0.3s ease;
+    color: blue;
+    background: white;
+}
+
+.delete {
+    background: rgb(255, 57, 57);
+    border: 1px solid rgb(255, 57, 57);
+}
+
+.delete:hover {
+    color: rgb(255, 57, 57);
+}
+
+.notebook-title-desc {
+    float: left;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.notebook-edit {
+    float: right;
+}
+
+.notebook-inside-desc {
+    padding: 10px;
+}
+
+.warning {
+    display: inline-block;
+    color: rgb(255, 57, 57);
+}
+
+.notebook-edit-name input, .notebook-edit-desc input, .general-form-input input{
+    border: none;
+    border-bottom: 1px solid blue;
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 12px;
+}
+
+.notes-content h2 {
+    margin-bottom: 10px;
+}
+
+
+.logo{
+    margin-left: 50px;
+    text-decoration: none;
+    float: left;
+}
+
+.header-right {
+    float: right;
+    margin-right: 50px;
+    font-weight: 300;
+}
+
+
+.header-right a:visited {
+    color: white;
+}
+.header-right a {
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.settings:hover {
+    color: cyan;
+    transition: 0.3s ease;
+}
+
+.logout:hover {
+    transition: 0.3s ease;
+    color: rgb(255, 57, 57);
+}

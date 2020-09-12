@@ -1,0 +1,40 @@
+{% extends "noter\base.html" %}
+
+{% block content %}
+    <div class="notes-content">
+        <h2>Registration</h2>
+        <form action="/noter/register/" method="post">
+            {% csrf_token %}
+            <div class="label">First name</div>
+            <div class="general-form-input">
+                {{ form.firstname }}
+            </div>
+            <div class="label">Last name</div>
+            <div class="general-form-input">
+                {{ form.lastname }}
+            </div>
+            <div class="label">Username</div>
+            <div class="general-form-input">
+                {{ form.username }}
+            </div>
+            <div class="label">Email</div>
+            <div class="general-form-input">
+                {{ form.email }}
+            </div>
+            <div class="label">Password</div>
+            <div class="general-form-input">
+                {{ form.password1 }}
+            </div>
+            <div class="label">Repeat password</div>
+            <div class="general-form-input">
+                {{ form.password2 }}
+            </div>
+            {{ error }}
+            <div class="note-bottom">
+                <input type="submit" value="Register">
+                <a href="{% url 'noter:login' %}" class="button">Login</a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

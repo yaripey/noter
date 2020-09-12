@@ -1,0 +1,25 @@
+{% extends "noter\base.html" %}
+
+{% block content %}
+
+    <div class="notes-content">
+        <h2>Edit your notebook:</h2>
+        <form action="/noter/notebook_edit/{{ notebook.id }}" method="post">
+            {% csrf_token %}
+            <div class="label">Notebook name:</div>
+            <div class="notebook-edit-name">
+                {{ form.name }}
+            </div>
+            <div class="label">Notebook decription:</div>
+            <div class="notebook-edit-desc">
+                {{ form.desc }}
+            </div>
+            <div class="note-bottom">
+                <input type="submit" value = "Save">
+                <a href="{% url 'noter:notebook_delete' notebook.id %}" class="button delete">Delete</a>
+                <div class="warning">Warning! If you delete your notebook, you will also delete every note inside it.</div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

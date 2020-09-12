@@ -1,0 +1,46 @@
+{% extends "noter\base.html" %}
+
+{% block content %}
+    <div class="notes-content">
+        <a href="{% url 'noter:notebook' notebook.id %}" class="note-item">Go back to <b>{{ notebook.name }}</b></a>
+    </div>
+    <div class="notes-content">
+        <form action="/noter/note/{{note.id}}/" method="post">        
+            {% csrf_token %}
+            <div class="note-title">
+                {{ form.title }}
+            </div>
+            <div class="note-text">
+                {{ form.text }}
+            </div>
+            {{ error }}
+            <div class="note-bottom">
+                <input type="submit" value="Save">
+                <a href="{% url 'noter:note_delete' note.id %}" class="button delete">Delete</a>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.note-title input').focus()
+        })
+
+        $('textarea').on('input', function() {
+            this.style.height = "";
+            this.style.height = this.scrollHeight + "px";
+        });
+
+        $('.note-title input').keydown(function (e) {
+            if (e.keyCode == 13) {
+                $('.note-text textarea').focus();
+                e.preventDefault();
+                return false;
+            }
+        })
+        
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'noter\base.html' %}
+
+{% block content %}
+
+    <div class="notes-content">
+        <h2>Access denied.</h2>
+        <h4>Please check your url adress again, or return to the main page.</h4>
+        <a href="{% url 'noter:index' %}" class = 'button'>Main page1</a>
+    </div>
+
+{% endblock %}
