@@ -1,1 +1,1 @@
-web: gunicorn noter:app
+web: gunicorn yaripey_site.wsgi
